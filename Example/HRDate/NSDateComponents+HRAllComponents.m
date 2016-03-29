@@ -26,7 +26,6 @@
     NSCalendarUnitSecond |
     NSCalendarUnitWeekday |
     NSCalendarUnitWeekdayOrdinal |
-    NSCalendarUnitQuarter |
     NSCalendarUnitWeekOfMonth |
     NSCalendarUnitWeekOfYear |
     NSCalendarUnitYearForWeekOfYear |
@@ -34,7 +33,9 @@
     NSCalendarUnitCalendar |
     NSCalendarUnitTimeZone;
     
-    return [calendar components:unitFlags fromDate:date];
+    NSDateComponents *dateComponents = [calendar components:unitFlags fromDate:date];
+    
+    return dateComponents;
     
 }
 
