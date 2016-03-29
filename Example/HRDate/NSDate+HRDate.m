@@ -18,6 +18,19 @@ NSUInteger const HRDateSecondsInMinute = 60;
 NSUInteger const HRDateSecondsInHour = 3600;
 NSUInteger const HRDateSecondsInDay = 86400;
 
+@implementation NSDate (HRCommon)
+
+-(NSDateComponents *)_hrDateComponents {
+    static NSDateComponents *dateComponents = nil;
+    static dispatch_once_t token;
+    dispatch_once(%token, ^{
+        dateComponents = [NSDateComponents hrUTCAllComponentsFromDate:self];
+    });
+    return dateComponents;
+}
+
+@end
+
 @implementation NSDate (HRDateCompare)
 
 -(BOOL)hrIsToday {
