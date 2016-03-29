@@ -10,6 +10,11 @@
 
 @interface NSCalendar (HRUTCCalendar)
 
+/**
+ *  Calendar with UTC time zone.
+ *
+ *  @return NSCalendar instance.
+ */
 +(nonnull instancetype)hrUTCCalendar;
 
 @end

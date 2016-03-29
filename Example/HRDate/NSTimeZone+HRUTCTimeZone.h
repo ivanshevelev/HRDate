@@ -12,6 +12,11 @@ extern NSString * const _Nonnull NSTimeZoneHRUTCTimeZoneUTCKey;
 
 @interface NSTimeZone (HRUTCTimeZone)
 
+/**
+ *  The UTC Time Zone.
+ *
+ *  @return NSTimeZone instance with "UTC" timeZone name.
+ */
 +(nonnull instancetype)hrUTCTimeZone;
 
 @end
