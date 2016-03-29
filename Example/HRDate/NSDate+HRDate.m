@@ -9,6 +9,7 @@
 #import "NSDate+HRDate.h"
 #import "NSDateComponents+HRAllComponents.h"
 #import "NSCalendar+HRUTCCalendar.h"
+#import "NSDateFormatter+HRUTCDateFormatter.h"
 
 NSUInteger const HRDateHoursInDay = 24;
 
@@ -36,7 +37,7 @@ NSUInteger const HRDateSecondsInDay = 86400;
 
 +(NSDateFormatter *)_hrDateFormatterWithDateFormat:(nonnull NSString *)dateFormat {
     NSParameterAssert(dateFormat);
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    NSDateFormatter *dateFormatter = [NSDateFormatter hrUTCDateFormatter];
     dateFormatter.dateFormat = dateFormat;
     return dateFormatter;
 }
@@ -49,7 +50,7 @@ NSUInteger const HRDateSecondsInDay = 86400;
 
 +(NSDateFormatter *)_hrDateFormatterWithDateStyle:(NSDateFormatterStyle)dateStyle
                                   andTimeStyle:(NSDateFormatterStyle)timeStyle {
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    NSDateFormatter *dateFormatter = [NSDateFormatter hrUTCDateFormatter];
     dateFormatter.dateStyle = dateStyle;
     dateFormatter.timeStyle = timeStyle;
     return dateFormatter;
@@ -65,15 +66,15 @@ NSUInteger const HRDateSecondsInDay = 86400;
 
 @implementation NSDate (HRDateCompare)
 
--(BOOL)isEqualToDateIgnoringTime:(NSDate *)date {
+-(BOOL)hrIsEqualToDateIgnoringTime:(NSDate *)date {
     NSParameterAssert(date);
     NSDateComponents *selfDateComponenets = [self _hrDateComponents];
-    NSDateComponents *todayDateComponenets = [NSDateComponents hrUTCAllComponentsFromDate:date];
+    NSDateComponents *anotherDateComponenets = [NSDateComponents hrUTCAllComponentsFromDate:date];
     
     return
-    selfDateComponenets.year  == todayDateComponenets.year  &&
-    selfDateComponenets.month == todayDateComponenets.month &&
-    selfDateComponenets.day   == todayDateComponenets.day;
+    selfDateComponenets.year  == anotherDateComponenets.year  &&
+    selfDateComponenets.month == anotherDateComponenets.month &&
+    selfDateComponenets.day   == anotherDateComponenets.day;
 }
 
 -(BOOL)hrIsToday {

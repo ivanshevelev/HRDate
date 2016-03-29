@@ -11,15 +11,34 @@
 
 @interface Tests : XCTestCase
 
+@property (nonatomic, strong, nullable) NSDate *date;
+
 @end
 
 @implementation Tests
 
+-(void)setUp {
+    [super setUp];
+    self.date = [NSDate date];
+}
+
 - (void)testIsToday
 {
-    NSDate *date = [NSDate date];
-    XCTAssert([date hrIsToday]);
+    XCTAssert([self.date hrIsToday]);
 }
+
+-(void)testTomorrow {
+    NSDate *dateAfterDays = [self.date hrDateAfterDays:1];
+    NSDate *tomorrow = [NSDate hrTomorrow];
+    XCTAssert([tomorrow hrIsEqualToDateIgnoringTime:dateAfterDays]);
+}
+
+-(void)testYesterday {
+    NSDate *dateAfterDays = [self.date hrDateAfterDays:-1];
+    NSDate *yesterday = [NSDate hrYesterday];
+    XCTAssert([yesterday hrIsEqualToDateIgnoringTime:dateAfterDays]);
+}
+
 
 @end
 

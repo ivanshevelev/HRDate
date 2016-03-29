@@ -7,14 +7,13 @@
 //
 
 #import "NSCalendar+HRUTCCalendar.h"
-
-NSString * const NSCalendarHRUTCCalendarUTCKey = @"UTC";
+#import "NSTimeZone+HRUTCTimeZone.h"
 
 @implementation NSCalendar (HRUTCCalendar)
 
 +(instancetype)hrUTCCalendar {
     NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-    calendar.timeZone = [NSTimeZone timeZoneWithName:NSCalendarHRUTCCalendarUTCKey];
+    calendar.timeZone = [NSTimeZone hrUTCTimeZone];
     return calendar;
 }
 

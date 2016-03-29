@@ -32,4 +32,28 @@
     XCTAssert([dateAfterDays hrIsYesterday]);
 }
 
+-(void)testDateFromStringWithDateFormat {
+    NSString *dateFormat = @"dd.MM.yyyy";
+    NSString *str = [self.date hrDateStringWithDateFormat:dateFormat];
+    XCTAssert(str);
+    NSDate *date = [NSDate hrDateFromString:str withDateFormat:dateFormat];
+    XCTAssert([self.date hrIsEqualToDateIgnoringTime:date]);
+    NSString *mbStr = [date hrDateStringWithDateFormat:dateFormat];
+    XCTAssert(mbStr);
+    XCTAssert([mbStr isEqualToString:str]);
+}
+
+-(void)testDateFromStringWithStyles {
+    NSDateFormatterStyle dateStyle = NSDateFormatterShortStyle;
+    NSDateFormatterStyle timeStyle = NSDateFormatterShortStyle;
+    
+    NSString *str = [self.date hrDateStringWithDateStyle:dateStyle andTimeStyle:timeStyle];
+    XCTAssert(str);
+    NSDate *date = [NSDate hrDateFromString:str withDateStyle:dateStyle andTimeStyle:timeStyle];
+    XCTAssert([self.date hrIsEqualToDateIgnoringTime:date]);
+    NSString *mbStr = [date hrDateStringWithDateStyle:dateStyle andTimeStyle:timeStyle];
+    XCTAssert(mbStr);
+    XCTAssert([mbStr isEqualToString:str]);
+}
+
 @end

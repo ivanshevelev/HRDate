@@ -21,6 +21,8 @@
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
+		6508F24E1CAAB9AF009C13F5 /* NSTimeZone+HRUTCTimeZone.m in Sources */ = {isa = PBXBuildFile; fileRef = 6508F24D1CAAB9AF009C13F5 /* NSTimeZone+HRUTCTimeZone.m */; };
+		6508F2521CAABA8D009C13F5 /* NSDateFormatter+HRUTCDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6508F2511CAABA8D009C13F5 /* NSDateFormatter+HRUTCDateFormatter.m */; };
 		65B3FBDA1CAA7206002C4859 /* NSCalendar+HRUTCCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B3FBD91CAA7206002C4859 /* NSCalendar+HRUTCCalendar.m */; };
 		65B3FBDE1CAA7394002C4859 /* NSDateComponents+HRAllComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B3FBDD1CAA7394002C4859 /* NSDateComponents+HRAllComponents.m */; };
 		65B3FBE21CAA77BB002C4859 /* NSDate+HRDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B3FBE11CAA77BB002C4859 /* NSDate+HRDate.m */; };
@@ -64,6 +66,10 @@
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
+		6508F24C1CAAB9AF009C13F5 /* NSTimeZone+HRUTCTimeZone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimeZone+HRUTCTimeZone.h"; sourceTree = "<group>"; };
+		6508F24D1CAAB9AF009C13F5 /* NSTimeZone+HRUTCTimeZone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimeZone+HRUTCTimeZone.m"; sourceTree = "<group>"; };
+		6508F2501CAABA8D009C13F5 /* NSDateFormatter+HRUTCDateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+HRUTCDateFormatter.h"; sourceTree = "<group>"; };
+		6508F2511CAABA8D009C13F5 /* NSDateFormatter+HRUTCDateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+HRUTCDateFormatter.m"; sourceTree = "<group>"; };
 		65B3FBD81CAA7206002C4859 /* NSCalendar+HRUTCCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSCalendar+HRUTCCalendar.h"; sourceTree = "<group>"; };
 		65B3FBD91CAA7206002C4859 /* NSCalendar+HRUTCCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSCalendar+HRUTCCalendar.m"; sourceTree = "<group>"; };
 		65B3FBDC1CAA7394002C4859 /* NSDateComponents+HRAllComponents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateComponents+HRAllComponents.h"; sourceTree = "<group>"; };
@@ -198,9 +204,29 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
+		6508F24B1CAAB997009C13F5 /* NSTimeZone */ = {
+			isa = PBXGroup;
+			children = (
+				6508F24C1CAAB9AF009C13F5 /* NSTimeZone+HRUTCTimeZone.h */,
+				6508F24D1CAAB9AF009C13F5 /* NSTimeZone+HRUTCTimeZone.m */,
+			);
+			name = NSTimeZone;
+			sourceTree = "<group>";
+		};
+		6508F24F1CAABA3C009C13F5 /* DateFormatter */ = {
+			isa = PBXGroup;
+			children = (
+				6508F2501CAABA8D009C13F5 /* NSDateFormatter+HRUTCDateFormatter.h */,
+				6508F2511CAABA8D009C13F5 /* NSDateFormatter+HRUTCDateFormatter.m */,
+			);
+			name = DateFormatter;
+			sourceTree = "<group>";
+		};
 		65B3FBD61CAA71CC002C4859 /* FuturePod */ = {
 			isa = PBXGroup;
 			children = (
+				6508F24F1CAABA3C009C13F5 /* DateFormatter */,
+				6508F24B1CAAB997009C13F5 /* NSTimeZone */,
 				65B3FBDF1CAA77A2002C4859 /* NSDate */,
 				65B3FBDB1CAA7361002C4859 /* NSDateComponents */,
 				65B3FBD71CAA71D7002C4859 /* NSCalendar */,
@@ -448,7 +474,9 @@
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				65B3FBDE1CAA7394002C4859 /* NSDateComponents+HRAllComponents.m in Sources */,
 				65B3FBE21CAA77BB002C4859 /* NSDate+HRDate.m in Sources */,
+				6508F2521CAABA8D009C13F5 /* NSDateFormatter+HRUTCDateFormatter.m in Sources */,
 				65B3FBDA1CAA7206002C4859 /* NSCalendar+HRUTCCalendar.m in Sources */,
+				6508F24E1CAAB9AF009C13F5 /* NSTimeZone+HRUTCTimeZone.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
