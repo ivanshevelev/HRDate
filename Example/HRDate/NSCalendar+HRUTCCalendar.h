@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-extern NSString * NSCalendarHRUTCCalendarUTCKey;
+extern NSString * _Nonnull NSCalendarHRUTCCalendarUTCKey;
 
 @interface NSCalendar (HRUTCCalendar)
 
-+(instancetype)hrUTCCalendar;
++(nonnull instancetype)hrUTCCalendar;
 
 @end
