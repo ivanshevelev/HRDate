@@ -1,6 +1,5 @@
 # HRDate
 
-[![CI Status](http://img.shields.io/travis/Ivan Shevelev/HRDate.svg?style=flat)](https://travis-ci.org/Ivan Shevelev/HRDate)
 [![Version](https://img.shields.io/cocoapods/v/HRDate.svg?style=flat)](http://cocoapods.org/pods/HRDate)
 [![License](https://img.shields.io/cocoapods/l/HRDate.svg?style=flat)](http://cocoapods.org/pods/HRDate)
 [![Platform](https://img.shields.io/cocoapods/p/HRDate.svg?style=flat)](http://cocoapods.org/pods/HRDate)
@@ -22,7 +21,7 @@ pod "HRDate"
 
 ## Author
 
-Ivan Shevelev, vanujkee@icloud.com
+Ivan Shevelev, ivan.shevelev@sibers.com
 
 ## License
 
