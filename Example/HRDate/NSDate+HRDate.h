@@ -25,9 +25,27 @@ extern NSUInteger const HRDateSecondsInDay;
 
 @interface NSDate (HRDateComponents)
 
-@property (nonatomic, readonly) NSUInteger hrDay;
-@property (nonatomic, readonly) NSUInteger hrMonth;
-@property (nonatomic, readonly) NSUInteger hrYear;
+@property (nonatomic, readonly) NSInteger hrEra;
+
+@property (nonatomic, readonly) NSInteger hrDay;
+@property (nonatomic, readonly) NSInteger hrMonth;
+@property (nonatomic, readonly) NSInteger hrYear;
+
+@property (nonatomic, readonly) NSInteger hrHours;
+@property (nonatomic, readonly) NSInteger hrMinutes;
+@property (nonatomic, readonly) NSInteger hrSeconds;
+
+@property (nonatomic, readonly) NSInteger hrWeekday;
+@property (nonatomic, readonly) NSInteger hrWeekdayOrdinal;
+
+@property (nonatomic, readonly) NSInteger hrWeekOfMonth;
+@property (nonatomic, readonly) NSInteger hrWeekdayOfYear;
+@property (nonatomic, readonly) NSInteger hrYearForWeekOfYear;
+
+@property (nonatomic, readonly) NSInteger hrNanosecond;
+
+@property (nonatomic, readonly, nonnull) NSTimeZone *hrTimeZone;
+@property (nonatomic, readonly, nonnull) NSCalendar *hrCalendar;
 
 @end
 
