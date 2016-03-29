@@ -26,7 +26,7 @@ NSUInteger const HRDateSecondsInDay = 86400;
     
     return
     selfDateComponenets.year  == todayDateComponenets.year  &&
-    selfDateComponenets.month == todayDateComponenets.month &&
+    selfDateComponenets.month == todayDateComponenets.month && 
     selfDateComponenets.day   == todayDateComponenets.day;
 }
 
@@ -41,7 +41,11 @@ NSUInteger const HRDateSecondsInDay = 86400;
 @implementation NSDate (HRDateString)
 
 -(nullable NSString *)hrDateStringWithDateFormat:(nonnull NSString *)dateFormat {
-    return nil;
+    NSParameterAssert(dateFormat);
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = dateFormat;
+    NSString *dateString = [dateFormatter stringFromDate:self];
+    return dateString;
 }
 
 -(nonnull NSString *)hrDateStringWithDateStyle:(NSDateFormatterStyle)dateStyle

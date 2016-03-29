@@ -27,7 +27,7 @@ extern NSUInteger const HRDateSecondsInDay;
 
 @property (nonatomic, readonly) NSUInteger hrDay;
 @property (nonatomic, readonly) NSUInteger hrMonth;
-@property (nonatomic, readonly) NSUInteger year;
+@property (nonatomic, readonly) NSUInteger hrYear;
 
 @end
 
@@ -36,6 +36,13 @@ extern NSUInteger const HRDateSecondsInDay;
 -(nonnull NSDate *)hrDateAfterDays:(NSInteger)days;
 -(nonnull NSDate *)hrYesterday;
 -(nonnull NSDate *)hrTomorrow;
+
++(nullable NSDate *)hrDateFromString:(nonnull NSString *)string
+                      withDateFormat:(nonnull NSString *)dateFormat;
+
++(nullable NSDate *)hrDateFromString:(nonnull NSString *)string
+                       withDateStyle:(NSDateFormatterStyle)dateStyle
+                        andTimeStyle:(NSDateFormatterStyle)timeStyle;
 
 @end
 
