@@ -40,6 +40,9 @@ extern NSUInteger const HRDateSecondsInHour;
  */
 extern NSUInteger const HRDateSecondsInDay;
 
+/**
+ *  Category for compare dates.
+ */
 @interface NSDate (HRDateCompare)
 
 /**
@@ -63,7 +66,6 @@ extern NSUInteger const HRDateSecondsInDay;
  *
  *  @return date is tomorrow or not.
  */
-
 -(BOOL)hrIsTomorrow;
 
 /**
@@ -71,11 +73,13 @@ extern NSUInteger const HRDateSecondsInDay;
  *
  *  @return date is yesterday or not.
  */
-
 -(BOOL)hrIsYesterday;
 
 @end
 
+/**
+ *  Category for get date components from the date.
+ */
 @interface NSDate (HRDateComponents)
 
 /**
@@ -159,6 +163,9 @@ extern NSUInteger const HRDateSecondsInDay;
 
 @end
 
+/**
+ *  Category for creating dates.
+ */
 @interface NSDate (HRDateFactory)
 
 /**
@@ -210,6 +217,9 @@ extern NSUInteger const HRDateSecondsInDay;
 
 @end
 
+/**
+ *  Category for get date string representation from the date.
+ */
 @interface NSDate (HRDateString)
 
 /**
