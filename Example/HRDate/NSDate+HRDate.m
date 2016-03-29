@@ -78,6 +78,66 @@ NSUInteger const HRDateSecondsInDay = 86400;
 
 @implementation NSDate (HRDateComponents)
 
+-(NSInteger)hrEra {
+    return [self _hrDateComponents].era;
+}
+
+-(NSInteger)hrDay {
+    return [self _hrDateComponents].day;
+}
+
+-(NSInteger)hrMonth {
+    return [self _hrDateComponents].month;
+}
+
+-(NSInteger)hrYear {
+    return [self _hrDateComponents].year;
+}
+
+-(NSInteger)hrHour {
+    return [self _hrDateComponents].hour;
+}
+
+-(NSInteger)hrMinute {
+    return [self _hrDateComponents].minute;
+}
+
+-(NSInteger)hrSecond {
+    return [self _hrDateComponents].second;
+}
+
+-(NSInteger)hrWeekday {
+    return [self _hrDateComponents].weekday;
+}
+
+-(NSInteger)hrWeekdayOrdinal {
+    return [self _hrDateComponents].weekdayOrdinal;
+}
+
+-(NSInteger)hrWeekOfMonth {
+    return [self _hrDateComponents].weekOfMonth;
+}
+
+-(NSInteger)hrWeekdayOfYear {
+    return [self _hrDateComponents].weekOfYear;
+}
+
+-(NSInteger)hrYearForWeekOfYear {
+    return [self _hrDateComponents].yearForWeekOfYear;
+}
+
+-(NSInteger)hrNanosecond {
+    return [self _hrDateComponents].nanosecond;
+}
+
+-(NSTimeZone *)hrTimeZone {
+    return [self _hrDateComponents].timeZone;
+}
+
+-(NSCalendar *)hrCalendar {
+    return [self _hrDateComponents].calendar;
+}
+
 @end
 
 @implementation NSDate (HRDateFactory)
