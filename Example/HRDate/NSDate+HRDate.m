@@ -118,7 +118,7 @@ NSUInteger const HRDateSecondsInDay = 86400;
     return [self _hrDateComponents].weekOfMonth;
 }
 
--(NSInteger)hrWeekdayOfYear {
+-(NSInteger)hrWeekOfYear {
     return [self _hrDateComponents].weekOfYear;
 }
 

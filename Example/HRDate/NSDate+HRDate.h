@@ -39,7 +39,7 @@ extern NSUInteger const HRDateSecondsInDay;
 @property (nonatomic, readonly) NSInteger hrWeekdayOrdinal;
 
 @property (nonatomic, readonly) NSInteger hrWeekOfMonth;
-@property (nonatomic, readonly) NSInteger hrWeekdayOfYear;
+@property (nonatomic, readonly) NSInteger hrWeekOfYear;
 @property (nonatomic, readonly) NSInteger hrYearForWeekOfYear;
 
 @property (nonatomic, readonly) NSInteger hrNanosecond;

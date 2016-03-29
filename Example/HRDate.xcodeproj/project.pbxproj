@@ -24,6 +24,7 @@
 		65B3FBDA1CAA7206002C4859 /* NSCalendar+HRUTCCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B3FBD91CAA7206002C4859 /* NSCalendar+HRUTCCalendar.m */; };
 		65B3FBDE1CAA7394002C4859 /* NSDateComponents+HRAllComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B3FBDD1CAA7394002C4859 /* NSDateComponents+HRAllComponents.m */; };
 		65B3FBE21CAA77BB002C4859 /* NSDate+HRDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B3FBE11CAA77BB002C4859 /* NSDate+HRDate.m */; };
+		65B3FBE41CAA944E002C4859 /* HRDateComponentsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B3FBE31CAA944E002C4859 /* HRDateComponentsTests.m */; };
 		71FD1B0AE7E19315863C3DDB /* Pods_HRDate_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D382E0E67A7FCF3CAF9E299E /* Pods_HRDate_Example.framework */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 /* End PBXBuildFile section */
@@ -68,6 +69,7 @@
 		65B3FBDD1CAA7394002C4859 /* NSDateComponents+HRAllComponents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateComponents+HRAllComponents.m"; sourceTree = "<group>"; };
 		65B3FBE01CAA77BB002C4859 /* NSDate+HRDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+HRDate.h"; sourceTree = "<group>"; };
 		65B3FBE11CAA77BB002C4859 /* NSDate+HRDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+HRDate.m"; sourceTree = "<group>"; };
+		65B3FBE31CAA944E002C4859 /* HRDateComponentsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRDateComponentsTests.m; sourceTree = "<group>"; };
 		711E870B69DCB34CE317111D /* Pods-HRDate_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HRDate_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HRDate_Tests/Pods-HRDate_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		8AF90227FC64E25C468008AA /* Pods_HRDate_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HRDate_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -166,6 +168,7 @@
 		6003F5B5195388D20070C39A /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				65B3FBE31CAA944E002C4859 /* HRDateComponentsTests.m */,
 				6003F5BB195388D20070C39A /* Tests.m */,
 				6003F5B6195388D20070C39A /* Supporting Files */,
 			);
@@ -451,6 +454,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F5BC195388D20070C39A /* Tests.m in Sources */,
+				65B3FBE41CAA944E002C4859 /* HRDateComponentsTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
