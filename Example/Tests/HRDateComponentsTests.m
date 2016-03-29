@@ -26,7 +26,7 @@
 }
 
 -(void)testNanosecond {
-    //can't be tested.
+//    can't be tested.
 //    NSDate *date = [NSDate date];
 //    NSDateComponents *dateComponents = [NSDateComponents hrUTCAllComponentsFromDate:date];
 //    XCTAssert(date.hrNanosecond == dateComponents.nanosecond);

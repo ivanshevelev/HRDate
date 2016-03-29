@@ -19,7 +19,10 @@ extern NSUInteger const HRDateSecondsInDay;
 
 @interface NSDate (HRDateCompare)
 
+-(BOOL)isEqualToDateIgnoringTime:(nonnull NSDate *)date;
 -(BOOL)hrIsToday;
+-(BOOL)hrIsTomorrow;
+-(BOOL)hrIsYesterday;
 
 @end
 
@@ -52,8 +55,8 @@ extern NSUInteger const HRDateSecondsInDay;
 @interface NSDate (HRDateFactory)
 
 -(nonnull NSDate *)hrDateAfterDays:(NSInteger)days;
--(nonnull NSDate *)hrYesterday;
--(nonnull NSDate *)hrTomorrow;
++(nonnull NSDate *)hrYesterday;
++(nonnull NSDate *)hrTomorrow;
 
 +(nullable NSDate *)hrDateFromString:(nonnull NSString *)string
                       withDateFormat:(nonnull NSString *)dateFormat;
