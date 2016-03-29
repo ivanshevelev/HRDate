@@ -8,6 +8,8 @@
 
 #import "NSDate+HRDate.h"
 #import "NSDateComponents+HRAllComponents.h"
+#import "NSCalendar+HRUTCCalendar.h"
+#import "NSDateFormatter+HRUTCDateFormatter.h"
 
 NSUInteger const HRDateHoursInDay = 24;
 
@@ -35,7 +37,7 @@ NSUInteger const HRDateSecondsInDay = 86400;
 
 +(NSDateFormatter *)_hrDateFormatterWithDateFormat:(nonnull NSString *)dateFormat {
     NSParameterAssert(dateFormat);
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    NSDateFormatter *dateFormatter = [NSDateFormatter hrUTCDateFormatter];
     dateFormatter.dateFormat = dateFormat;
     return dateFormatter;
 }
@@ -48,7 +50,7 @@ NSUInteger const HRDateSecondsInDay = 86400;
 
 +(NSDateFormatter *)_hrDateFormatterWithDateStyle:(NSDateFormatterStyle)dateStyle
                                   andTimeStyle:(NSDateFormatterStyle)timeStyle {
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    NSDateFormatter *dateFormatter = [NSDateFormatter hrUTCDateFormatter];
     dateFormatter.dateStyle = dateStyle;
     dateFormatter.timeStyle = timeStyle;
     return dateFormatter;
@@ -64,14 +66,30 @@ NSUInteger const HRDateSecondsInDay = 86400;
 
 @implementation NSDate (HRDateCompare)
 
--(BOOL)hrIsToday {
+-(BOOL)hrIsEqualToDateIgnoringTime:(NSDate *)date {
+    NSParameterAssert(date);
     NSDateComponents *selfDateComponenets = [self _hrDateComponents];
-    NSDateComponents *todayDateComponenets = [NSDateComponents hrUTCAllComponentsFromDate:[NSDate date]];
+    NSDateComponents *anotherDateComponenets = [NSDateComponents hrUTCAllComponentsFromDate:date];
     
     return
-    selfDateComponenets.year  == todayDateComponenets.year  &&
-    selfDateComponenets.month == todayDateComponenets.month && 
-    selfDateComponenets.day   == todayDateComponenets.day;
+    selfDateComponenets.year  == anotherDateComponenets.year  &&
+    selfDateComponenets.month == anotherDateComponenets.month &&
+    selfDateComponenets.day   == anotherDateComponenets.day;
+}
+
+-(BOOL)hrIsToday {
+    NSCalendar *calendar = [NSCalendar hrUTCCalendar];
+    return [calendar isDateInToday:self];
+}
+
+-(BOOL)hrIsTomorrow {
+    NSCalendar *calendar = [NSCalendar hrUTCCalendar];
+    return [calendar isDateInTomorrow:self];
+}
+
+-(BOOL)hrIsYesterday {
+    NSCalendar *calendar = [NSCalendar hrUTCCalendar];
+    return [calendar isDateInYesterday:self];
 }
 
 @end
@@ -118,7 +136,7 @@ NSUInteger const HRDateSecondsInDay = 86400;
     return [self _hrDateComponents].weekOfMonth;
 }
 
--(NSInteger)hrWeekdayOfYear {
+-(NSInteger)hrWeekOfYear {
     return [self _hrDateComponents].weekOfYear;
 }
 
@@ -143,15 +161,15 @@ NSUInteger const HRDateSecondsInDay = 86400;
 @implementation NSDate (HRDateFactory)
 
 -(nonnull NSDate *)hrDateAfterDays:(NSInteger)days {
-    return [self dateByAddingTimeInterval:HRDateSecondsInDay * days];
+    return [self dateByAddingTimeInterval:(NSInteger)HRDateSecondsInDay * days];
 }
 
--(nonnull NSDate *)hrYesterday {
-    return [self hrDateAfterDays:-1];
++(nonnull NSDate *)hrYesterday {
+    return [[self.class date] hrDateAfterDays:-1];
 }
 
--(nonnull NSDate *)hrTomorrow {
-    return [self hrDateAfterDays:1];
++(nonnull NSDate *)hrTomorrow {
+    return [[self.class date] hrDateAfterDays:1];
 }
 
 +(nullable NSDate *)hrDateFromString:(nonnull NSString *)string

@@ -7,29 +7,38 @@
 //
 
 @import XCTest;
+#import "NSDate+HRDate.h"
 
 @interface Tests : XCTestCase
+
+@property (nonatomic, strong, nullable) NSDate *date;
 
 @end
 
 @implementation Tests
 
-- (void)setUp
-{
+-(void)setUp {
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+    self.date = [NSDate date];
 }
 
-- (void)tearDown
+- (void)testIsToday
 {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
-    [super tearDown];
+    XCTAssert([self.date hrIsToday]);
 }
 
-- (void)testExample
-{
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+-(void)testTomorrow {
+    NSDate *dateAfterDays = [self.date hrDateAfterDays:1];
+    NSDate *tomorrow = [NSDate hrTomorrow];
+    XCTAssert([tomorrow hrIsEqualToDateIgnoringTime:dateAfterDays]);
 }
+
+-(void)testYesterday {
+    NSDate *dateAfterDays = [self.date hrDateAfterDays:-1];
+    NSDate *yesterday = [NSDate hrYesterday];
+    XCTAssert([yesterday hrIsEqualToDateIgnoringTime:dateAfterDays]);
+}
+
 
 @end
 

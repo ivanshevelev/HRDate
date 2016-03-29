@@ -19,7 +19,10 @@ extern NSUInteger const HRDateSecondsInDay;
 
 @interface NSDate (HRDateCompare)
 
+-(BOOL)hrIsEqualToDateIgnoringTime:(nonnull NSDate *)date;
 -(BOOL)hrIsToday;
+-(BOOL)hrIsTomorrow;
+-(BOOL)hrIsYesterday;
 
 @end
 
@@ -39,7 +42,7 @@ extern NSUInteger const HRDateSecondsInDay;
 @property (nonatomic, readonly) NSInteger hrWeekdayOrdinal;
 
 @property (nonatomic, readonly) NSInteger hrWeekOfMonth;
-@property (nonatomic, readonly) NSInteger hrWeekdayOfYear;
+@property (nonatomic, readonly) NSInteger hrWeekOfYear;
 @property (nonatomic, readonly) NSInteger hrYearForWeekOfYear;
 
 @property (nonatomic, readonly) NSInteger hrNanosecond;
@@ -52,8 +55,8 @@ extern NSUInteger const HRDateSecondsInDay;
 @interface NSDate (HRDateFactory)
 
 -(nonnull NSDate *)hrDateAfterDays:(NSInteger)days;
--(nonnull NSDate *)hrYesterday;
--(nonnull NSDate *)hrTomorrow;
++(nonnull NSDate *)hrYesterday;
++(nonnull NSDate *)hrTomorrow;
 
 +(nullable NSDate *)hrDateFromString:(nonnull NSString *)string
                       withDateFormat:(nonnull NSString *)dateFormat;

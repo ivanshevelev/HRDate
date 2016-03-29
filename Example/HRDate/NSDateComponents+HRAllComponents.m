@@ -8,6 +8,7 @@
 
 #import "NSDateComponents+HRAllComponents.h"
 #import "NSCalendar+HRUTCCalendar.h"
+#import "NSTimeZone+HRUTCTimeZone.h"
 
 @implementation NSDateComponents (HRAllComponents)
 
@@ -34,6 +35,7 @@
     NSCalendarUnitTimeZone;
     
     NSDateComponents *dateComponents = [calendar components:unitFlags fromDate:date];
+    dateComponents.timeZone = [NSTimeZone hrUTCTimeZone];
     
     return dateComponents;
     

@@ -1,5 +1,5 @@
 //
-//  NSCalendar+HRUTCCalendar.h
+//  NSDateFormatter+HRUTCDateFormatter.h
 //  HRDate
 //
 //  Created by Ivan Shevelev on 29/03/16.
@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSCalendar (HRUTCCalendar)
+@interface NSDateFormatter (HRUTCDateFormatter)
 
-+(nonnull instancetype)hrUTCCalendar;
++(nonnull instancetype)hrUTCDateFormatter;
 
 @end
