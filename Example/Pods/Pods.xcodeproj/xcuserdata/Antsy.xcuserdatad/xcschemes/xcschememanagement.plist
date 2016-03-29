@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>HRDate-HRDate.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>HRDate.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-HRDate_Example.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-HRDate_Tests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>04C78FBE84365FCDF357D323951CFFA8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>290EDC28ECA224AA70680494AF696A97</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7B92254FFBECD51F0E541EDC09A4195F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E06A7FDF6B4459E1452B18F57E661238</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

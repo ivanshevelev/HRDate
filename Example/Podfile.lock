@@ -1,0 +1,14 @@
+PODS:
+  - HRDate (0.1.0)
+
+DEPENDENCIES:
+  - HRDate (from `../`)
+
+EXTERNAL SOURCES:
+  HRDate:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  HRDate: 4725365662d564e8b0669a59ab217c2964126cff
+
+COCOAPODS: 0.39.0

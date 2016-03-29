@@ -1,0 +1,6 @@
+framework module Pods_HRDate_Example {
+  umbrella header "Pods-HRDate_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

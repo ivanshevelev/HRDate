@@ -1,0 +1,6 @@
+framework module Pods_HRDate_Tests {
+  umbrella header "Pods-HRDate_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
