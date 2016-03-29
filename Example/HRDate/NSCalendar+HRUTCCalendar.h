@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-extern NSString * _Nonnull NSCalendarHRUTCCalendarUTCKey;
+extern NSString * const _Nonnull NSCalendarHRUTCCalendarUTCKey;
 
 @interface NSCalendar (HRUTCCalendar)
 
