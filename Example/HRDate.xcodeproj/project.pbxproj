@@ -70,6 +70,7 @@
 		6508F24D1CAAB9AF009C13F5 /* NSTimeZone+HRUTCTimeZone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimeZone+HRUTCTimeZone.m"; sourceTree = "<group>"; };
 		6508F2501CAABA8D009C13F5 /* NSDateFormatter+HRUTCDateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+HRUTCDateFormatter.h"; sourceTree = "<group>"; };
 		6508F2511CAABA8D009C13F5 /* NSDateFormatter+HRUTCDateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+HRUTCDateFormatter.m"; sourceTree = "<group>"; };
+		659D3B021CAD539000E3FC3C /* HRDate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRDate.h; sourceTree = "<group>"; };
 		65B3FBD81CAA7206002C4859 /* NSCalendar+HRUTCCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSCalendar+HRUTCCalendar.h"; sourceTree = "<group>"; };
 		65B3FBD91CAA7206002C4859 /* NSCalendar+HRUTCCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSCalendar+HRUTCCalendar.m"; sourceTree = "<group>"; };
 		65B3FBDC1CAA7394002C4859 /* NSDateComponents+HRAllComponents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateComponents+HRAllComponents.h"; sourceTree = "<group>"; };
@@ -230,6 +231,7 @@
 				65B3FBDF1CAA77A2002C4859 /* NSDate */,
 				65B3FBDB1CAA7361002C4859 /* NSDateComponents */,
 				65B3FBD71CAA71D7002C4859 /* NSCalendar */,
+				659D3B021CAD539000E3FC3C /* HRDate.h */,
 			);
 			name = FuturePod;
 			sourceTree = "<group>";
