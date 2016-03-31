@@ -7,7 +7,7 @@
 //
 
 @import XCTest;
-#import "NSDate+HRDate.h"
+#import <HRDate/HRDate.h>
 
 @interface Tests : XCTestCase
 

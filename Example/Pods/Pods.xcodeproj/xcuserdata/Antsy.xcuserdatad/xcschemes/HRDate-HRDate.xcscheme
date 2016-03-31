@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'CC5250DCD705DD3F1887AEB3'
+               BlueprintIdentifier = '6D9E6BB244D824804048FEBB'
                BlueprintName = 'HRDate-HRDate'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'HRDate.bundle'>
