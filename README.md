@@ -9,7 +9,7 @@ HRDate is a simple API for NSDate!
 
 ## Usage
 
-Constants(like a seconds in hour):
+Constants(number of seconds in an hour, for example):
 ```objective-c
 extern NSUInteger const HRDateHoursInDay;
 extern NSUInteger const HRDateMinutesInHour;
