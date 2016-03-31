@@ -10,6 +10,11 @@
 
 @interface NSDateFormatter (HRUTCDateFormatter)
 
+/**
+ *  The date formatter with UTC time zone.
+ *
+ *  @return NSDateFormatter instance.
+ */
 +(nonnull instancetype)hrUTCDateFormatter;
 
 @end
