@@ -3,7 +3,7 @@ This application makes use of the following third party libraries:
 
 ## HRDate
 
-Copyright (c) 2016 Ivan Shevelev <vanujkee@icloud.com>
+Copyright (c) 2016 Ivan Shevelev <ivan.shevelev@sibers.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
