@@ -256,6 +256,13 @@ extern NSUInteger const HRDateSecondsInDay;
                             month:(NSUInteger)month
                           andYear:(NSUInteger)year;
 
+/**
+ *  Method for creating new NSDate with adding hours difference by now NSDate.
+ *
+ *  @param hourDifference Count of hours.
+ *
+ *  @return NSDate by custom NSDateComponents.
+ */
 +(nullable NSDate *)hrDateWithHourDifference:(NSInteger)hourDifference;
 
 @end
