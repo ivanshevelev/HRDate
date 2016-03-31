@@ -78,6 +78,8 @@ And date strings ofc:
 -(nonnull NSString *)hrDateStringWithDateStyle:(NSDateFormatterStyle)dateStyle andTimeStyle:(NSDateFormatterStyle)timeStyle;
 ```
 
+For NSDateFormatter, NSTimeZone, NSDateComponents and NSCalendar features, see [documentation](http://cocoadocs.org/docsets/HRDate/0.1/).
+
 ## Requirements
 
 iOS 8.0 or higher.
