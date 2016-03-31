@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "HRDate"
-  s.version          = "0.1.0"
+  s.version          = "0.1"
   s.summary          = "HRDate is a set of categories for simple date management."
   s.description      = "NSDate, NSDateFormatter, NSDateComponents, NSTimeZone and NSCalendar categories."
 
