@@ -178,6 +178,15 @@ extern NSUInteger const HRDateSecondsInDay;
 -(nonnull NSDate *)hrDateAfterDays:(NSInteger)days;
 
 /**
+ *  Factory method for create new date after days.
+ *
+ *  @param hours Hours count.
+ *
+ *  @return NSDate instance.
+ */
+-(nonnull NSDate *)hrDateAfterHours:(NSInteger)hours;
+
+/**
  *  Factory method for create new yesterday date.
  *
  *  @return NSDate instance.
@@ -214,6 +223,40 @@ extern NSUInteger const HRDateSecondsInDay;
 +(nullable NSDate *)hrDateFromString:(nonnull NSString *)string
                        withDateStyle:(NSDateFormatterStyle)dateStyle
                         andTimeStyle:(NSDateFormatterStyle)timeStyle;
+
+/**
+ *  Method for creating new NSDate with custom NSDateComponents.
+ *
+ *  @param hour   Hour date component.
+ *  @param minute Minute date component.
+ *  @param second Second date component.
+ *  @param day    Day date component.
+ *  @param month  Month date component.
+ *  @param year   Year date component.
+ *
+ *  @return NSDate by custom NSDateComponents.
+ */
++(nullable NSDate *)hrDateWithHour:(NSUInteger)hour
+                            minute:(NSUInteger)minute
+                            second:(NSUInteger)second
+                               day:(NSUInteger)day
+                            month:(NSUInteger)month
+                          andYear:(NSUInteger)year;
+
+/**
+ *  Method for creating new NSDate with custom NSDateComponents and 00:00 time.
+ *
+ *  @param day    Day date component.
+ *  @param month  Month date component.
+ *  @param year   Year date component.
+ *
+ *  @return NSDate by custom NSDateComponents.
+ */
++(nullable NSDate *)hrDateWithDay:(NSUInteger)day
+                            month:(NSUInteger)month
+                          andYear:(NSUInteger)year;
+
++(nullable NSDate *)hrDateWithHourDifference:(NSInteger)hourDifference;
 
 @end
 

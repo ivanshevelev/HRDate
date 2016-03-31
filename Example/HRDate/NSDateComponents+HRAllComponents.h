@@ -29,4 +29,11 @@
  */
 +(nonnull instancetype)hrUTCAllComponentsFromDate:(nonnull NSDate *)date;
 
+/**
+ *  Method for creating the empty date componenets for creating new NSDate with UTC time zone.
+ *
+ *  @return empty NSDateComponents instance.
+ */
++(nonnull instancetype)hrURCEmptyComponents;
+
 @end

@@ -25,12 +25,7 @@ NSUInteger const HRDateSecondsInDay = 86400;
 #pragma mark - Date Components
 
 -(NSDateComponents *)_hrDateComponents {
-    static NSDateComponents *dateComponents = nil;
-    static dispatch_once_t token;
-    dispatch_once(&token, ^{
-        dateComponents = [NSDateComponents hrUTCAllComponentsFromDate:self];
-    });
-    return dateComponents;
+    return [NSDateComponents hrUTCAllComponentsFromDate:self];
 }
 
 #pragma mark - Date Formatter With Date Format
@@ -164,25 +159,74 @@ NSUInteger const HRDateSecondsInDay = 86400;
     return [self dateByAddingTimeInterval:(NSInteger)HRDateSecondsInDay * days];
 }
 
+-(nonnull NSDate *)hrDateAfterHours:(NSInteger)hours {
+    NSTimeInterval timeInterval = (NSInteger)HRDateSecondsInHour * hours;
+    NSDate *date = [self dateByAddingTimeInterval:timeInterval];
+    return date;
+}
+
 +(nonnull NSDate *)hrYesterday {
-    return [[self.class date] hrDateAfterDays:-1];
+    NSDate *today = [self date];
+    NSDate *result = [today hrDateAfterDays:-1];
+    return result;
 }
 
 +(nonnull NSDate *)hrTomorrow {
-    return [[self.class date] hrDateAfterDays:1];
+    NSDate *today = [self date];
+    NSDate *result = [today hrDateAfterDays:1];
+    return result;
 }
 
 +(nullable NSDate *)hrDateFromString:(nonnull NSString *)string
                       withDateFormat:(nonnull NSString *)dateFormat {
     NSDateFormatter *dateFormatter = [self _hrDateFormatterWithDateFormat:dateFormat];
-    return [dateFormatter dateFromString:string];
+    NSDate *date = [dateFormatter dateFromString:string];
+    return date;
 }
 
 +(nullable NSDate *)hrDateFromString:(nonnull NSString *)string
                        withDateStyle:(NSDateFormatterStyle)dateStyle
                         andTimeStyle:(NSDateFormatterStyle)timeStyle {
-    NSDateFormatter *dateFormatter = [self _hrDateFormatterWithDateStyle:dateStyle andTimeStyle:timeStyle];
-    return [dateFormatter dateFromString:string];
+    NSDateFormatter *dateFormatter = [self _hrDateFormatterWithDateStyle:dateStyle
+                                                            andTimeStyle:timeStyle];
+    NSDate *date = [dateFormatter dateFromString:string];
+    return date;
+}
+
++(nullable NSDate *)hrDateWithHour:(NSUInteger)hour
+                            minute:(NSUInteger)minute
+                            second:(NSUInteger)second
+                               day:(NSUInteger)day
+                             month:(NSUInteger)month
+                           andYear:(NSUInteger)year {
+    NSDateComponents *emptyDateComponents = [NSDateComponents hrURCEmptyComponents];
+    emptyDateComponents.hour = hour;
+    emptyDateComponents.minute = minute;
+    emptyDateComponents.second = second;
+    emptyDateComponents.day = day;
+    emptyDateComponents.month = month;
+    emptyDateComponents.year = year;
+    NSCalendar *UTCCalendar = [NSCalendar hrUTCCalendar];
+    NSDate *date = [UTCCalendar dateFromComponents:emptyDateComponents];
+    return date;
+}
+
++(nullable NSDate *)hrDateWithDay:(NSUInteger)day
+                            month:(NSUInteger)month
+                          andYear:(NSUInteger)year {
+    return [self hrDateWithHour:0
+                         minute:0
+                         second:0
+                            day:day
+                          month:month
+                        andYear:year];
+}
+
++(nullable NSDate *)hrDateWithHourDifference:(NSInteger)hourDifference {
+    NSDate *today = [NSDate date];
+    NSTimeInterval timeInterval = (NSInteger)HRDateSecondsInHour * hourDifference;
+    NSDate *result = [today dateByAddingTimeInterval:timeInterval];
+    return result;
 }
 
 @end

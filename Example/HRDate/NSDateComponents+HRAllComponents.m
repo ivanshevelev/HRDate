@@ -35,7 +35,7 @@
     NSCalendarUnitTimeZone;
     
     NSDateComponents *dateComponents = [calendar components:unitFlags fromDate:date];
-    dateComponents.timeZone = [NSTimeZone hrUTCTimeZone];
+    dateComponents.timeZone = calendar.timeZone;
     
     return dateComponents;
     
@@ -45,6 +45,12 @@
     return [self hrAllComponentsFromCalendar:[NSCalendar hrUTCCalendar]
                                      andDate:date];
     
+}
+
++(nonnull instancetype)hrURCEmptyComponents {
+    NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+    dateComponents.timeZone = [NSTimeZone hrUTCTimeZone];
+    return dateComponents;
 }
 
 @end
