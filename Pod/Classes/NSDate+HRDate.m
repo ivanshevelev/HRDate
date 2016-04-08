@@ -165,6 +165,17 @@ NSUInteger const HRDateSecondsInDay = 86400;
     return date;
 }
 
+-(nonnull NSDate *)hrDateAfterMonths:(NSInteger)months {
+    NSParameterAssert(months <= 12);
+    NSDateComponents *dateComponents = [NSDateComponents hrURCEmptyComponents];
+    dateComponents.month = months;
+    NSCalendar *calendar = [NSCalendar hrUTCCalendar];
+    NSDate *date = [calendar dateByAddingComponents:dateComponents
+                                             toDate:self
+                                            options:0];
+    return date;
+}
+
 +(nonnull NSDate *)hrYesterday {
     NSDate *today = [self date];
     NSDate *result = [today hrDateAfterDays:-1];

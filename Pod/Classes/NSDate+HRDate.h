@@ -186,10 +186,21 @@ extern NSUInteger const HRDateSecondsInDay;
  */
 -(nonnull NSDate *)hrDateAfterHours:(NSInteger)hours;
 
+
+/**
+ *  Factory method for create new date after months.
+ *
+ *  @param months Months count.
+ *
+ *  @return NSDate instance.
+ */
+-(nonnull NSDate *)hrDateAfterMonths:(NSInteger)months;
+
 /**
  *  Factory method for create new yesterday date.
  *
  *  @return NSDate instance.
+ *
  */
 +(nonnull NSDate *)hrYesterday;
 
