@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "HRDate"
-  s.version          = "0.1"
+  s.version          = "0.1.1"
   s.summary          = "HRDate is a set of categories for simple date management."
   s.description      = "NSDate, NSDateFormatter, NSDateComponents, NSTimeZone and NSCalendar categories."
 
@@ -10,7 +10,11 @@ Pod::Spec.new do |s|
   s.source           = { :git => "https://github.com/ivanshevelev/HRDate.git", :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/antsy_ivan'
 
-  s.platform     = :ios, '8.0'
+  s.ios.deployment_target = '8.0'
+  s.osx.deployment_target = '10.9'
+  s.tvos.deployment_target = '9.0'
+  s.watchos.deployment_target = '2.0'
+
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes/**/*'
